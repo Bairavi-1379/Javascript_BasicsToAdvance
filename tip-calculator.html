@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Tip Calculator</title></head>
+<body>
+  <h2>Tip Calculator</h2>
+  <input id="bill" type="number" placeholder="Bill Amount">
+  <input id="tip" type="number" placeholder="Tip %">
+  <button id="calculate">Calculate Tip</button>
+  <div id="result"></div>
+  <script>
+    const calculate = document.getElementById('calculate');
+    calculate.addEventListener('click', () => {
+      const bill = parseFloat(document.getElementById('bill').value);
+      const tipPercent = parseFloat(document.getElementById('tip').value) / 100;
+      if (isNaN(bill) || isNaN(tipPercent)) {
+        result.innerText = 'Please enter valid numbers';
+        return;
+      }
+      const tipAmount = bill * tipPercent;
+      document.getElementById('result').innerText = `Tip: ₹${tipAmount.toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Quote Generator</title></head>
+<body>
+  <h2 id="quote">Loading...</h2>
+  <button onclick="getQuote()">New Quote</button>
+  <script>
+    async function getQuote() {
+      try {
+        const res = await fetch('https://api.quotable.io/random');
+        const data = await res.json();
+        document.getElementById('quote').textContent = data.content;
+      } catch (err) {
+        document.getElementById('quote').textContent = 'Failed to fetch quote';
+      }
+    }
+    getQuote();
+  </script>
+</body>
+</html>

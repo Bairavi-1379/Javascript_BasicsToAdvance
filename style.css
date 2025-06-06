@@ -1,0 +1,17 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+h1, h2 {
+  color: #333;
+}
+button {
+  padding: 10px 15px;
+  margin: 5px;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
